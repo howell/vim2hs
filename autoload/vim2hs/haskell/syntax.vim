@@ -12,14 +12,14 @@ endfunction " }}}
 
 
 function! vim2hs#haskell#syntax#delimiters() " {{{
-  syntax match hsDelimiter
-    \ '(\|)\|\[\|\]\|,\|;\|{\|}\|\k\@<!_\k\@!\|[[:punct:]]\@<!@[[:punct:]]\@!'
-    \ display
-  syntax match hsDelimiter
-    \ '[-!#$%&\*\+/=\?@\\^|~.<>]\@<!|[-!#$%&\*\+/=\?@\\^|~.<>]\@!'
-    \ display
+  " syntax match hsDelimiter
+    " \ '(\|)\|\[\|\]\|,\|;\|{\|}\|\k\@<!_\k\@!\|[[:punct:]]\@<!@[[:punct:]]\@!'
+    " \ display
+  " syntax match hsDelimiter
+    " \ '[-!#$%&\*\+/=\?@\\^|~.<>]\@<!|[-!#$%&\*\+/=\?@\\^|~.<>]\@!'
+    " \ display
 
-  highlight default link hsDelimiter Delimiter
+  " highlight default link hsDelimiter Delimiter
 endfunction " }}}
 
 
@@ -51,7 +51,7 @@ function! vim2hs#haskell#syntax#keywords(conceal_wide, conceal_enumerations, con
     \ if then else case of
 
   syntax keyword hsKeyword
-    \ safe default family
+    \ safe default family forall
 
   syntax match hsImport
     \ "\<import\>.*"he=s+6
@@ -102,19 +102,19 @@ endfunction " }}}
 
 
 function! vim2hs#haskell#syntax#types() " {{{
-  syntax match hsType
-    \ "^\(\s*\)\%(default\s\+\)\?\%(\k\+\|([^[:alnum:]]\+)\)\_s*\(::\|∷\).*\%(\n\1\s.*\)*"
-    \ contains=TOP,@Spell
+  " syntax match hsType
+    " \ "^\(\s*\)\%(default\s\+\)\?\%(\k\+\|([^[:alnum:]]\+)\)\_s*\(::\|∷\).*\%(\n\1\s.*\)*"
+    " \ contains=TOP,@Spell
 
-  highlight default link hsType Type
+  " highlight default link hsType Type
 endfunction " }}}
 
 
 function! vim2hs#haskell#syntax#bindings() " {{{
-  syntax match hsIdentifier
-    \ "^\k\+\ze.*\%(\n\s.*\|\n\)*[[:punct:]]\@<!=[[:punct:]]\@!"
-
-  highlight default link hsIdentifier Identifier
+  " syntax match hsIdentifier
+    " \ "^\k\+\ze.*\%(\n\s.*\|\n\)*[[:punct:]]\@<!=[[:punct:]]\@!"
+"
+  " highlight default link hsIdentifier Identifier
 endfunction " }}}
 
 
